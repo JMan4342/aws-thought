@@ -5,7 +5,7 @@ AWS.config.update({
     endpoint: "http://localhost:8000"
 });
 
-const dynaodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+const dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
 const params = {
     TableName: "Thoughts",
@@ -23,7 +23,7 @@ const params = {
     }
 };
 
-dynaodb.createTable(params, (err, data) => {
+dynamodb.createTable(params, (err, data) => {
     if (err) {
         console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
     } else {
