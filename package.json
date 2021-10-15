@@ -3,22 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cd server && npm start",
     "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "test": "tape test/*.js",
+    "watch": "npm-watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "if-env": "^1.0.4",
+    "npm-watch": "^0.11.0"
+
     "aws-sdk": "^2.1003.0",
     "if-env": "^1.0.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^6.3.0"
   }
 }

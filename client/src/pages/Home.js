@@ -9,6 +9,8 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const res = await fetch(`/api/users`);
+
         const res = await fetch('/api/users');
         const jsonData = await res.json();
         // sort the array by createdAt property ordered by descending values
