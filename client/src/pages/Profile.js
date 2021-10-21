@@ -9,6 +9,7 @@ const Profile = props => {
     username: userParam,
     createdAt: '', 
     thought: '',
+    image: '',
   }]);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const Profile = props => {
         {!isLoaded ? (
             <div>Loading...</div>
           ) : (
-          <ThoughtList thoughts={thoughts} title={`${userParam}'s thoughts...`} />
+          <ThoughtList thoughts={thoughts} setThoughts={setThoughts} title={`${userParam}'s thoughts...`} />
           )}
         </div>
       </div>
